@@ -6,12 +6,26 @@
   --color-accent: #8b5cf6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   min-height: 100%;
   background-color: var(--color-bg);
   color: var(--color-fg);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-nav {
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
