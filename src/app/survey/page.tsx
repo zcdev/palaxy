@@ -1,8 +1,11 @@
 export default function SurveyPage() {
     return (
-        <main className="p-6">
+        <section id="survey" className="mt-auto">
             <h2 className="text-2xl font-semibold">Take the Survey</h2>
             {/* SurveyForm component */}
-        </main>
+            <p className="font-body text-lg p-6">
+                Questions will appear here soon...
+            </p>
+        </section>
     );
 }
