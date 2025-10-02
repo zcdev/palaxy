@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import SurveyPage from "./survey/page";
+import Background from "@/components/Background";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
           Start Survey
         </a>
         <SurveyPage />
+        <Background />
       </main>
     </div>
   );
