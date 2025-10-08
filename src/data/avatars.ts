@@ -33,6 +33,6 @@ export const avatars = [
         id: 'orbitz',
         name: 'Orbitz',
         img: '/avatars/orbitz',
-        tagline: 'Vibrant spirit of the fifth ring',
+        tagline: 'Mystic of the Fifth Ring',
     },
 ] as const;
