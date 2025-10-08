@@ -1,23 +1,9 @@
-export type AvatarId = 'zarnok' | 'blip' | 'flarb' | 'luna7' | 'glimbo' | 'orbitz';
+export type AvatarId = 'zarnok' | 'luna7' | 'orbitz' | 'blip' | 'glimbo' | 'flarb';
+
+export type Response = 'stronglyDisagree' | 'disagree' | 'neutral' | 'agree' | 'stronglyAgree';
 
 export interface Question {
-    id: number;
     text: string;
-    relatedAvatars: AvatarId[];
-    intent: string;
-}
-
-export interface Response {
-    questionId: number;
-    value: number;
-}
-
-export interface AvatarScore {
-    id: AvatarId;
-    score: number;
-}
-
-export interface SurveyResult {
-    topMatches: AvatarScore[];
-    allScores: AvatarScore[];
+    weights: Record<AvatarId, number>; // 0–1
+    isReversed?: boolean;              // negative phrasing?
 }
