@@ -33,3 +33,8 @@ picture img {
   width: auto;
   height: auto;
 }
+
+.survey-bar {
+  background-attachment: fixed;
+  background-clip: padding-box;
+}
