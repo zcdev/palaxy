@@ -3,6 +3,7 @@ export type AvatarId = 'zarnok' | 'luna7' | 'orbitz' | 'blip' | 'glimbo' | 'flar
 export type Response = 'stronglyDisagree' | 'disagree' | 'neutral' | 'agree' | 'stronglyAgree';
 
 export interface Question {
+    id: number;
     text: string;
     weights: Record<AvatarId, number>; // 0–1
     isReversed?: boolean;              // negative phrasing?
