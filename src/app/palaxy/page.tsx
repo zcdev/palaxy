@@ -6,7 +6,7 @@ import { AvatarModal } from './components/AvatarModal';
 import { ForceMap } from './components/ForceMap';
 import { PulseSurvey } from './components/PulseSurvey';
 import { Transmission } from './components/Transmission';
-import type { PalaxyState } from './types';
+import type { PalaxyState, Avatar } from './types';
 
 export default function PalaxyPage() {
   const [state, setState] = useState<PalaxyState>({
@@ -14,10 +14,12 @@ export default function PalaxyPage() {
     surveyResponses: {},
   });
 
-  const handleSelectAvatar = (id: string) =>
-    setState({ ...state, selectedAvatarId: id, phase: 'intro' });
+  const handleSelectAvatar = (avatar: Avatar) =>
+    setState({ ...state, selectedAvatar: avatar, phase: 'intro' });
 
   const handleConfirmAvatar = () => setState({ ...state, phase: 'forces' });
+
+  const handleDenyAvatar = () => setState({ ...state, phase: 'select' });
 
   const handleNextForces = () => setState({ ...state, phase: 'pulse' });
 
@@ -31,8 +33,9 @@ export default function PalaxyPage() {
     case 'intro':
       return (
         <AvatarModal
-          avatarId={state.selectedAvatarId!}
+          avatar={state.selectedAvatar!}
           onConfirm={handleConfirmAvatar}
+          onDeny={handleDenyAvatar}
         />
       );
 
