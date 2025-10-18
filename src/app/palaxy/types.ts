@@ -1,8 +1,10 @@
+// Global Types:
+
 export type ViewPhase = 'select' | 'intro' | 'forces' | 'pulse' | 'thanks';
 
 export interface PalaxyState {
     phase: ViewPhase;
-    selectedAvatarId?: string;
+    selectedAvatar?: Avatar;
     surveyResponses: Record<string, string>;
 }
 

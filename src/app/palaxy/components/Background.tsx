@@ -1,4 +1,5 @@
-// components/Background.tsx
+'use client';
+
 import Stars from "./Stars";
 
 export default function Background() {
