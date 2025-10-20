@@ -16,14 +16,14 @@ const AvatarCard = ({ avatar, onSelect }: AvatarCardProps) => (
     <motion.div
         whileHover={{ scale: 1.05, transition: { duration: 0.3, delay: 0.1 } }}
         whileTap={{ scale: 0.98 }}
-        className="group relative cursor-pointer rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-4 shadow-md backdrop-blur-sm"
+        className="group relative cursor-pointer rounded-3xl bg-gradient-to-b from-white/10 to-white/5 px-4 py-8 shadow-md backdrop-blur-sm"
         onClick={() => onSelect(avatar)}
     >   <div className="flex flex-col items-center text-center font-body">
             <div className="relative">
                 <AvatarImage src={avatar.image} alt={avatar.name} />
             </div>
-            <h3 className="mt-3 text-xl font-semibold text-white">{avatar.name}</h3>
-            <p className="text-[13px] text-white/70">{avatar.tagline}</p>
+            <h3 className="font-headline mt-3 text-lg text-white">{avatar.name}</h3>
+            <p className="text-[13px] text-white/70">{avatar.title}</p>
         </div>
     </motion.div>
 );

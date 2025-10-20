@@ -36,19 +36,21 @@ export default function AvatarImage({
             animate="rest"
             whileHover="hover"
         >
-            <Image
-                src={src}
-                alt={alt}
-                width={width}
-                height={height}
-                priority
-                className={className}
-            />
-            <motion.div
-                className="absolute inset-0 rounded-full bg-white/30 blur-lg pointer-events-none"
-                variants={glowOverlay}
-                transition={{ duration: 0.25, ease: 'easeInOut' }}
-            />
+            <div className="avatar-img">
+                <Image
+                    src={src}
+                    alt={alt}
+                    width={width}
+                    height={height}
+                    priority
+                    className={className}
+                />
+                <motion.div
+                    className="absolute inset-0 rounded-full bg-white/30 blur-lg pointer-events-none"
+                    variants={glowOverlay}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                />
+            </div>
         </motion.div>
     );
 }
