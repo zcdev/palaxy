@@ -7,11 +7,19 @@ import { ForceMap } from './components/ForceMap';
 import { PulseSurvey } from './components/PulseSurvey';
 import { Transmission } from './components/Transmission';
 import type { PalaxyState, Avatar } from './types';
+import { mockAvatars } from './data';
+
+interface Props {
+  avatar?: Avatar;
+  selectedAvatar?: Avatar;
+}
 
 export default function PalaxyPage() {
   const [state, setState] = useState<PalaxyState>({
+    avatar: undefined,
     phase: 'select',
     surveyResponses: {},
+    selectedAvatar: undefined,
   });
 
   const handleSelectAvatar = (avatar: Avatar) =>
@@ -40,7 +48,7 @@ export default function PalaxyPage() {
       );
 
     case 'forces':
-      return <ForceMap onNext={handleNextForces} />;
+      return <ForceMap avatar={state.selectedAvatar!} onNext={handleNextForces} mockAvatars={mockAvatars} />;
 
     case 'pulse':
       return <PulseSurvey onSubmit={handleSurveySubmit} />;
