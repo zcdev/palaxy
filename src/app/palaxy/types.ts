@@ -35,6 +35,18 @@ export interface Avatar {
     wavelength: string;
 }
 
+export type AvatarBaseProps = {
+    avatar: Avatar;
+};
+
+export type AvatarWithListProps = AvatarBaseProps & {
+    mockAvatars: Avatar[];
+};
+
+export type ForceMapProps = AvatarWithListProps & {
+    onNext: () => void;
+};
+
 export interface Question {
     id: string;
     text: string;
