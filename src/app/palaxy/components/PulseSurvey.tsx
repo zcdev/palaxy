@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Button from './Button';
-import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '../styles';
-import { questions } from '../survey';
+import { Button } from "@palaxy/components/ui";
+import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '@palaxy/styles';
+import { questions } from '@palaxy/data/survey';
 
 interface Props {
     onSubmit: (responses: Record<string, string>) => void;

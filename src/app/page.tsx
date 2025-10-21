@@ -1,6 +1,6 @@
-import Navbar from "./palaxy/components/Navbar";
-import PalaxyPage from "./palaxy/page";
-import Background from "./palaxy/components/Background";
+import Navbar from "@palaxy/components/ui/Navbar";
+import PalaxyPage from "@palaxy/page";
+import Background from "@palaxy/components/ui/Background";
 
 export default function HomePage() {
     return (

@@ -22,10 +22,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": "src",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["*"],
+      "@palaxy/*": ["app/palaxy/*"],
+      "@components/*": ["app/palaxy/components/*"],
+      "@data/*": ["app/palaxy/data/*"]
     }
   },
   "include": [

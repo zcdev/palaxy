@@ -1,6 +1,6 @@
 'use client';
 
-import Stars from "./Stars";
+import Stars from "@palaxy/components/background/Stars";
 
 export default function Background() {
     return (

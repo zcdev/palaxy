@@ -1,9 +1,9 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import type { Avatar } from '../types';
-import Button from './Button';
-import { purpleButton } from '../styles';
+import type { Avatar } from '../../types';
+import Button from '../ui/Button';
+import { purpleButton } from '../../styles';
 
 type Props = {
     avatar: Avatar;

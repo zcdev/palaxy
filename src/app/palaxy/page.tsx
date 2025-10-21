@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { AvatarGrid } from './components/AvatarGrid';
-import { AvatarModal } from './components/AvatarModal';
-import { ForceMap } from './components/ForceMap';
-import { PulseSurvey } from './components/PulseSurvey';
-import { Transmission } from './components/Transmission';
-import type { PalaxyState, Avatar } from './types';
-import { mockAvatars } from './data';
+import { AvatarGrid } from '@palaxy/components/avatar/AvatarGrid';
+import { AvatarModal } from '@palaxy/components/avatar/AvatarModal';
+import { ForceMap } from '@palaxy/components/ForceMap';
+import { PulseSurvey } from '@palaxy/components/PulseSurvey';
+import { Transmission } from '@palaxy/components/Transmission';
+import type { PalaxyState, Avatar } from '@palaxy/types';
+import { mockAvatars } from '@palaxy/data/data';
 
 interface Props {
   avatar?: Avatar;

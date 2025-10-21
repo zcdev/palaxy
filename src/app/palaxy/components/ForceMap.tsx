@@ -1,10 +1,9 @@
 'use client';
 
-import type { Avatar } from '../types';
-import AvatarImage from './AvatarImage';
-import { mockAvatars } from '../data';
-import Button from './Button';
-import { purpleButton } from '../styles';
+import type { Avatar } from '@palaxy/types';
+import { AvatarImage } from "@palaxy/components/avatar";
+import { Button } from "@palaxy/components/ui";
+import { purpleButton } from '@palaxy/styles';
 
 interface Props {
     avatar: Avatar;

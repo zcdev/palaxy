@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import AvatarImage from './AvatarImage';
-import { mockAvatars } from '../data';
-import type { Avatar } from '../types';
+import { mockAvatars } from '@palaxy/data/data';
+import type { Avatar } from '@palaxy/types';
 
 type AvatarCardProps = {
     avatar: Avatar;
