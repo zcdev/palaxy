@@ -1,52 +1,67 @@
 'use client';
 
 import { useState } from 'react';
+import Button from './Button';
+import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '../styles';
+import { questions } from '../survey';
 
 interface Props {
     onSubmit: (responses: Record<string, string>) => void;
 }
 
+const buttons = [
+    redButton,
+    amberButton,
+    limeButton,
+    emeraldButton,
+    cyanButton,
+    blueButton
+];
+
 export function PulseSurvey({ onSubmit }: Props) {
     const [responses, setResponses] = useState<Record<string, string>>({});
 
-    const handleChange = (q: string, a: string) =>
-        setResponses({ ...responses, [q]: a });
+    const handleChange = (id: string, value: string) =>
+        setResponses(prev => ({ ...prev, [id]: value }));
 
     const handleSubmit = () => onSubmit(responses);
 
     return (
-        <div className="text-white p-8 max-w-xl mx-auto space-y-6">
-            <h2 className="text-2xl font-bold mb-4">Quick Palaxy Pulse</h2>
-
-            {[
-                'So… did the galaxy’s personality algorithm totally nail you?',
-                'Would you trust your cosmic match to pilot your spaceship?',
-                'How emotionally scarred are you after reading your bio?',
-                'Would you recommend Palaxy to your species?',
-            ].map((q, i) => (
-                <div key={i} className="space-y-2">
-                    <p>{q}</p>
-                    {['Option A', 'Option B', 'Option C'].map((opt) => (
-                        <label key={opt} className="block">
-                            <input
-                                type="radio"
-                                name={`q${i}`}
-                                value={opt}
-                                onChange={() => handleChange(`q${i}`, opt)}
-                                className="mr-2 accent-pink-500"
-                            />
-                            {opt}
-                        </label>
+        <>
+            <h1 className="text-3xl font-headline font-bold mb-6">Quick Palaxy Pulse</h1>
+            <div className="z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm mb-6">
+                <ol role="list" className="list-decimal list-inside pl-3">
+                    {questions.map(question => (
+                        <li key={question.id} className="pt-3 sm:text-sm md:text-lg text-left">
+                            {question.text}
+                            <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start justify-center sm:justify-start text-sm text-center sm:text-left pt-2 pb-6">
+                                {question.options.map((option, index) => {
+                                    const palette = buttons.slice(0, question.options.length);
+                                    const buttonColor = palette[index];
+                                    return (
+                                        <label key={option} className="cursor-pointer w-full sm:w-auto">
+                                            <input
+                                                type="radio"
+                                                name={question.id}
+                                                value={option}
+                                                onChange={() => handleChange(question.id, option)}
+                                                checked={responses[question.id] === option}
+                                                className="peer hidden"
+                                            />
+                                            <span className={buttonColor}>{option}</span>
+                                        </label>
+                                    );
+                                })}
+                            </div>
+                        </li>
                     ))}
-                </div>
-            ))}
-
-            <button
-                onClick={handleSubmit}
-                className="mt-6 px-6 py-2 bg-indigo-500 hover:bg-indigo-600 rounded-xl transition-colors"
-            >
-                Submit
-            </button>
-        </div>
+                </ol>
+                <Button
+                    onClick={handleSubmit}
+                    className={purpleButton}
+                    text="Submit"
+                />
+            </div>
+        </>
     );
 }
