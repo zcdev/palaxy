@@ -34,3 +34,9 @@ export interface Avatar {
     psyche: string;
     wavelength: string;
 }
+
+export interface Question {
+    id: string;
+    text: string;
+    options: string[];
+}
