@@ -18,12 +18,14 @@ export function AvatarModal({ avatar, onConfirm, onDeny }: Props) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+                className="modal fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4"
             >
                 <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.9, opacity: 0 }}
+                    role="dialog"
+                    aria-modal="true"
                     className="bg-white/80 p-8 rounded-2xl max-w-lg text-center text-black shadow-lg"
                 >
                     <h2 className="font-headline text-2xl font-bold mb-3">{avatar.name}</h2>

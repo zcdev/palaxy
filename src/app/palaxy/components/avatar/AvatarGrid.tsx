@@ -16,9 +16,17 @@ const AvatarCard = ({ avatar, onSelect }: AvatarCardProps) => (
     <motion.div
         whileHover={{ scale: 1.05, transition: { duration: 0.3, delay: 0.1 } }}
         whileTap={{ scale: 0.98 }}
-        className="group relative cursor-pointer rounded-3xl bg-gradient-to-b from-white/10 to-white/5 px-4 py-8 shadow-md backdrop-blur-sm"
+        className="group relative cursor-pointer rounded-3xl bg-gradient-to-b from-white/10 to-white/5 px-4 py-8 shadow-md backdrop-blur-sm focus-within:ring-2 focus-within:ring-cyan-400"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onSelect(avatar);
+            }
+        }}
         onClick={() => onSelect(avatar)}
-    >   <div className="flex flex-col items-center text-center font-body">
+    >   <div className="flex flex-col place-content-center items-center text-center font-body sm:min-h-[372px] xl:min-h-auto">
             <div className="relative">
                 <AvatarImage src={avatar.image} alt={avatar.name} />
             </div>
@@ -33,9 +41,9 @@ export function AvatarGrid({ onSelect }: AvatarGridProps) {
         <section className="relative z-10 mx-auto max-w-auto px-6 py-6">
             <h1 className="font-headline text-6xl mb-4">Palaxy</h1>
             <h2 className="text-3xl font-semibold tracking-wider mb-4">Welcome</h2>
-            <p className="font-body text-xl mb-10 leading-relaxed tracking-wide">Which cosmic traveler feels like you today?<br />Please choose one:</p>
+            <p className="font-body text-xl mb-4 md:mb-10 sm:leading-1 md:leading-relaxed tracking-wide">Which cosmic traveler feels like you today? <br className="hidden md:block" />Please choose one:</p>
             <motion.div
-                className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 pt-5"
+                className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 pt-2 md:pt-5"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
