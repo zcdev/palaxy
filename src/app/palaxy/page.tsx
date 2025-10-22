@@ -8,6 +8,7 @@ import { PulseSurvey } from '@palaxy/components/PulseSurvey';
 import { Transmission } from '@palaxy/components/Transmission';
 import type { PalaxyState, Avatar } from '@palaxy/types';
 import { mockAvatars } from '@palaxy/data/data';
+import { supabase } from '@palaxy/lib/client';
 
 interface Props {
   avatar?: Avatar;
@@ -31,8 +32,36 @@ export default function PalaxyPage() {
 
   const handleNextForces = () => setState({ ...state, phase: 'pulse' });
 
-  const handleSurveySubmit = (responses: Record<string, string>) =>
-    setState({ ...state, surveyResponses: responses, phase: 'thanks' });
+  const handleSurveySubmit = async (responses: Record<string, string>) => {
+    // Update local state immediately so UI feels responsive
+    setState((prev) => ({
+      ...prev,
+      surveyResponses: responses,
+      phase: 'thanks',
+    }));
+
+    try {
+      // Insert survey data into Supabase
+      const { error } = await supabase.from('responses').insert({
+        session_id: crypto.randomUUID(), // optional unique visitor ID
+        answers: responses,
+        avatar_result: state.selectedAvatar ?? null,
+      });
+
+      if (error) {
+        // Silent fail-safe: report to console only in dev
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Supabase insert error:', error);
+        }
+      } else if (process.env.NODE_ENV === 'development') {
+        console.log('Survey saved successfully ✅');
+      }
+    } catch (err) {
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Unexpected survey submit error:', err);
+      }
+    }
+  };
 
   switch (state.phase) {
     case 'select':
