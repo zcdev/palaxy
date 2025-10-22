@@ -11,8 +11,8 @@ export function Transmission({ responses }: Props) {
         <div className="text-white text-center max-w-2xl mx-auto">
             <h1 className="text-3xl font-headline font-bold mb-4">Transmission Complete</h1>
             <p className="font-body text-xl mb-5">
-                Your responses have been launched into the Palaxy Core.<br className="hidden sm:block" />
-                The universe just got a little more self-aware—thanks to you.
+                Your responses have been launched into the Palaxy Core. <br className="hidden sm:block" />
+                The universe just got a little more self&#8209;aware, <br className="hidden sm:block" />thank to you.
             </p>
             <Image src="/avatars/palaxy-group.png" className="inline-block" width={400} height={400} alt="Palaxy Group" />
             <p className="font-body text-lg text-white/70 mt-6">

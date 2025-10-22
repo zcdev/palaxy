@@ -8,7 +8,7 @@ export default function HomePage() {
             <header>
                 <Navbar />
             </header>
-            <main className="mt-20 p-6 text-center flex flex-col items-center">
+            <main className="mt-4 md:mt-20 p-6 text-center flex flex-col items-center">
                 <PalaxyPage />
                 <Background />
             </main>

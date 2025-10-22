@@ -26,7 +26,7 @@ html, body {
 
 .font-body {
   font-family: var(--font-body);
-  line-height: 1.625;
+  line-height: 1.5;
   letter-spacing: 0.25;
   word-spacing: 1.5;
 }
@@ -41,7 +41,15 @@ picture img {
   max-width: 120px !important;
 }
 
-.survey-bar {
-  background-attachment: fixed;
-  background-clip: padding-box;
+.progress-bar {
+  width: 100%;
+  max-width: 560px;
+}
+
+@media (width >= 48rem) {
+  .font-body {
+    line-height: 1.625;
+    letter-spacing: 0.25;
+    word-spacing: 1.5;
+  }
 }
