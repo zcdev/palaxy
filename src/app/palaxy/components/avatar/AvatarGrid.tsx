@@ -38,10 +38,10 @@ const AvatarCard = ({ avatar, onSelect }: AvatarCardProps) => (
 
 export function AvatarGrid({ onSelect }: AvatarGridProps) {
     return (
-        <section className="relative z-10 mx-auto max-w-auto px-6 py-6">
+        <section className="relative z-10 mx-auto max-w-auto px-6 my-10 md:mt-0">
             <h1 className="font-headline text-6xl mb-4">Palaxy</h1>
             <h2 className="text-3xl font-semibold tracking-wider mb-4">Welcome</h2>
-            <p className="font-body text-xl mb-4 md:mb-10 sm:leading-1 md:leading-relaxed tracking-wide">Which cosmic traveler feels like you today? <br className="hidden md:block" />Please choose one:</p>
+            <p className="font-body text-xl mb-4 md:mb-10 sm:leading-1 md:leading-relaxed tracking-wide">Which cosmic traveler feels like you today? <br className="hidden md:block" />Please choose one:</p>
             <motion.div
                 className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 pt-2 md:pt-5"
                 initial="hidden"

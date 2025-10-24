@@ -35,12 +35,12 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
     const handleSubmit = () => onSubmit(responses);
 
     return (
-        <>
-            <h1 className="text-3xl font-headline font-bold mt-3 md:mt-0 mb-6">Quick Palaxy Pulse</h1>
+        <section className="mx-6 my-10 md:mt-0">
+            <h1 className="text-3xl md:text-4xl font-headline font-bold md:mt-0 mb-6">Quick Palaxy Pulse</h1>
             <ProgressBar progress={progress} />
             <form
                 onSubmit={(event) => { event.preventDefault(); handleSubmit(); }}
-                className="z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm mb-6">
+                className="z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm">
                 <ol role="list" className="list-decimal list-inside pl-3">
                     {questions.map(question => (
                         <li key={question.id} className="pt-3 sm:text-sm md:text-lg text-left">
@@ -75,6 +75,6 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
                     text="Submit"
                 />
             </form>
-        </>
+        </section>
     );
 }

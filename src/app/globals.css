@@ -46,6 +46,10 @@ picture img {
   max-width: 560px;
 }
 
+canvas {
+  mix-blend-mode: screen;
+}
+
 @media (width >= 48rem) {
   .font-body {
     line-height: 1.625;
