@@ -3,10 +3,11 @@
 import clsx from "clsx";
 
 type Props = {
-    onClick: () => void;
+    onClick?: () => void;
     className?: string;
     text: string;
     data?: string;
+    type?: 'button' | 'submit' | 'reset';
 };
 
 export default function Button({
@@ -14,9 +15,9 @@ export default function Button({
     className,
     text,
     data,
-
+    type,
 }: Props) {
-    return <button data-state={data} onClick={onClick}
+    return <button type={type} data-state={data} onClick={onClick}
         className={clsx(
             "min-h-[44px]",
             "cursor-pointer w-full sm:w-auto",
