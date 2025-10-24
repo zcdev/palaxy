@@ -49,5 +49,20 @@ This marks Palaxy’s final **frontend foundation milestone** before backend int
 **Technical Notes**
 - New dependencies: `motion`, `simplex-noise`, `clsx`, and `tailwind-merge`  
 - Maintains performance consistency across devices with GPU-accelerated motion  
-- Prepares the codebase for v0.9.2 UX polish milestone and v1.0.0 final release  
+- Prepares the codebase for v0.9.2 UX polish milestone and v1.0.0 final release
+
+## [v0.9.2] - 2025-10-24 
+### ✨ Final UX Polish (2025-10-24)
+
+Routing: Moved main page from /palaxy to root (/) for clean URLs.
+
+UI Enhancements: Added Palaxy Pals’ Words for friendly flavor text.
+
+Form Fix: Resolved auto-submit issue by defaulting Button to type="button".
+
+Scroll Behavior: Implemented scroll-to-top on page load for smoother transitions.
+
+Accessibility & Styling: Verified ARIA labels, color contrast, and responsive padding.
+
+Backgrounds: Ensured fixed-position star layers render consistently across routes.
 
