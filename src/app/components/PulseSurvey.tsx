@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { Button } from "@palaxy/components/ui";
-import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '@palaxy/styles';
-import { questions } from '@palaxy/data/survey';
-import ProgressBar from "@palaxy/components/ui/ProgressBar";
-import type { FieldErrors } from "@palaxy/types";
-import type { SurveyResponse } from '@palaxy/lib/schema';
+import { useState, useEffect } from 'react';
+import { Button } from "../components/ui";
+import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '../styles';
+import { questions } from '../data/survey';
+import ProgressBar from "../components/ui/ProgressBar";
+import type { FieldErrors } from "../types";
+import type { SurveyResponse } from '../lib/schema';
 
 interface Props {
     onSubmit: (responses: Record<string, string>) => void;
@@ -32,14 +32,22 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
 
     const handleChange = (id: number, value: string) => setResponses(prev => ({ ...prev, [id]: value }));
 
-    const handleSubmit = () => onSubmit(responses);
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        onSubmit(responses);
+    };
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []); // triggers once when PulseSurvey mounts
+
 
     return (
         <section className="mx-6 my-10 md:mt-0">
             <h1 className="text-3xl md:text-4xl font-headline font-bold md:mt-0 mb-6">Quick Palaxy Pulse</h1>
             <ProgressBar progress={progress} />
             <form
-                onSubmit={(event) => { event.preventDefault(); handleSubmit(); }}
+                onSubmit={(event) => { handleSubmit(event); }}
                 className="z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm">
                 <ol role="list" className="list-decimal list-inside pl-3">
                     {questions.map(question => (

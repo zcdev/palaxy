@@ -1,5 +1,6 @@
 import './globals.css';
 import { Black_Han_Sans, Spinnaker } from 'next/font/google';
+import Background from "./components/ui/Background";
 
 const blackHanSans = Black_Han_Sans({
   subsets: ['latin'],
@@ -21,9 +22,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
+
   return (
     <html lang="en" className={`${blackHanSans.variable} ${spinnaker.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Background />
+        {children}
+      </body>
     </html>
   );
 }

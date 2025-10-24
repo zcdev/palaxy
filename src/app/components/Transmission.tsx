@@ -1,13 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
-import WavePrismBackground from "@/app/palaxy/components/background/TransmissionWave";
+import WavePrismBackground from "../components/background/TransmissionWave";
 
 interface Props {
     responses: Record<string, string>;
 }
 
 export function Transmission({ responses }: Props) {
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []); // triggers once when PulseSurvey mounts
+
     return (
         <section className="relative flex flex-col items-center justify-center overflow-hidden bg-transparent text-white text-center w-full p-4 mx-6 my-10 md:mt-0">
             <WavePrismBackground className="w-full bg-transparent mx-auto">

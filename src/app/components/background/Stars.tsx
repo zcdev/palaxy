@@ -1,5 +1,5 @@
 // components/Stars.tsx
-import StarLayer from "@palaxy/components/background/StarLayer";
+import StarLayer from "./StarLayer";
 
 export default function Stars() {
     return (

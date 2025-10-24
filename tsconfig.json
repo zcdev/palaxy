@@ -24,10 +24,7 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
-      "@palaxy/*": ["app/palaxy/*"],
-      "@components/*": ["app/palaxy/components/*"],
-      "@data/*": ["app/palaxy/data/*"]
+      "@/*": ["./src/*"],
     }
   },
   "include": [
