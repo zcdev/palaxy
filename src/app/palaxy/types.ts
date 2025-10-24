@@ -48,7 +48,9 @@ export type ForceMapProps = AvatarWithListProps & {
 };
 
 export interface Question {
-    id: string;
+    id: number;
     text: string;
     options: string[];
 }
+
+export type FieldErrors<T> = Partial<Record<keyof T, string[]>>;
