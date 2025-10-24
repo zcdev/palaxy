@@ -33,12 +33,12 @@ export function AvatarModal({ avatar, onConfirm, onDeny }: Props) {
                     <Button
                         onClick={onConfirm}
                         className={purpleButton}
-                        text="Yes, this sounds like me"
+                        text="Yes, this sounds like me"
                     />
                     <Button
                         onClick={onDeny}
                         className={purpleButton}
-                        text="No, this doesn't sound like me"
+                        text="No, this doesn't sound like me"
                     />
                 </motion.div>
             </motion.div>

@@ -1,8 +1,9 @@
-import Navbar from "@palaxy/components/ui/Navbar";
-import PalaxyPage from "@palaxy/page";
-import Background from "@palaxy/components/ui/Background";
+'use client';
+import Navbar from "./components/ui/Navbar";
+import PalaxyPage from "./components/PalaxyPage";
 
 export default function HomePage() {
+    
     return (
         <div>
             <header>
@@ -10,7 +11,6 @@ export default function HomePage() {
             </header>
             <main className="mt-4 md:mt-20 text-center flex flex-col items-center h-full">
                 <PalaxyPage />
-                <Background />
             </main>
         </div>
     );

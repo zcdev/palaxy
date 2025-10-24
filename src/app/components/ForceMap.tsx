@@ -1,15 +1,13 @@
 'use client';
 
-import type { ForceMapProps } from '@palaxy/types';
-import IdentityCard from "@palaxy/components/force/IdentityCard";
-import NeighborCard from '@palaxy/components/force/NeighborCard';
-import CounterforceCard from '@palaxy/components/force/CounterforceCard';
-import { Button } from "@palaxy/components/ui";
-import { purpleButton } from '@palaxy/styles';
-import { getAvatarById } from '../utils';
+import type { ForceMapProps } from '../types';
+import IdentityCard from "./force/IdentityCard";
+import NeighborCard from './force/NeighborCard';
+import CounterforceCard from './force/CounterforceCard';
+import { Button } from "../components/ui";
+import { purpleButton } from '../styles';
 
 export function ForceMap({ avatar, mockAvatars, onNext }: ForceMapProps) {
-    const counterforceData = getAvatarById(mockAvatars!, avatar.forces.counterforce.id);
 
     return (
         <section className="text-center text-white md:px-8 mx-6 my-10 md:mt-0">

@@ -1,5 +1,5 @@
-import type { AvatarBaseProps } from '@palaxy/types';
-import { AvatarImage } from "@palaxy/components/avatar";
+import type { AvatarBaseProps } from '../../types';
+import { AvatarImage } from "../../components/avatar";
 
 export default function IdentityCard({ avatar }: AvatarBaseProps) {
 

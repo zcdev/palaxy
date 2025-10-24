@@ -15,7 +15,7 @@ export default function Button({
     className,
     text,
     data,
-    type,
+    type = 'button',
 }: Props) {
     return <button type={type} data-state={data} onClick={onClick}
         className={clsx(

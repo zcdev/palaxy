@@ -1,6 +1,6 @@
-import type { AvatarWithListProps } from '@palaxy/types';
-import { AvatarImage } from "@palaxy/components/avatar";
-import { getAvatarById } from "@palaxy/utils";
+import type { AvatarWithListProps } from '../../types';
+import { AvatarImage } from "../../components/avatar";
+import { getAvatarById } from "../../utils";
 
 export default function NeighborCard({ avatar, mockAvatars }: AvatarWithListProps) {
 

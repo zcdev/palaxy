@@ -1,11 +1,14 @@
-import type { AvatarWithListProps } from '@palaxy/types';
-import { AvatarImage } from "@palaxy/components/avatar";
-import { getAvatarById } from "@palaxy/utils";
-
+import type { AvatarWithListProps } from '../../types';
+import { AvatarImage } from "../../components/avatar";
+import { getAvatarById } from "../../utils";
+import { cosmicWords } from "../../data/words";
 
 export default function CounterforceCard({ avatar, mockAvatars }: AvatarWithListProps) {
 
     const counterforceData = getAvatarById(mockAvatars, avatar.forces.counterforce.id);
+
+    const randomQuote = cosmicWords[Math.floor(Math.random() * cosmicWords.length)];
+
     if (!counterforceData) return null;
 
     return (
@@ -14,7 +17,7 @@ export default function CounterforceCard({ avatar, mockAvatars }: AvatarWithList
             <h2 className="font-headline text-xl font-bold tracking-wide mt-2">{counterforceData!.name}</h2>
             <div className="inline-block mt-6"><AvatarImage src={counterforceData!.image} alt={counterforceData!.name} /></div>
             <p className="font-body text-md text-center lg:text-left mt-6">{avatar.forces.counterforce.note}</p>
-            <p className="font-body text-md text-center lg:text-left mt-4 text-white">Palaxy Pals’ Words: <em>"True friends share everything — even their last slice of asteroid pizza."</em></p>
+            <p className="font-body text-md text-center lg:text-left mt-4 text-white">Palaxy Pals’ Words: <em>"{randomQuote}"</em></p>
             <p className="text-sm text-center lg:text-left tracking-normal leading-relaxed mt-4 text-white/70">{counterforceData!.name}’s Wavelength: {counterforceData!.wavelength}</p>
             <p className="text-sm text-center lg:text-left tracking-normal leading-relaxed mt-4 text-white/70">{avatar.name}’s Wavelength: {avatar.wavelength}</p>
         </div>
