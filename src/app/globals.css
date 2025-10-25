@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/preflight.css" layer(base);
 
 :root {
   --color-fg: #f5f5f5;
