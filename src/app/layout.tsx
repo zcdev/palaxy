@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Palaxy',
     description: 'Enter the Palaxy, where six unique cosmic avatars reflect the forces that shape you. Experience motion, art, and discovery in a galactic personality journey powered by modern web tech.',
-    images: ['/og-image.png'],
+    images: ['/palaxy-og-img.png'],
   },
   metadataBase: new URL('https://palaxy.app'),
   alternates: {
