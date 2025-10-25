@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'Palaxy',
     images: [
       {
-        url: '/palaxy-og-image.png',
+        url: '/palaxy-og-img.png',
         width: 1200,
         height: 630,
         alt: 'Palaxy app preview',
