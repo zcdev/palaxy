@@ -1,7 +1,7 @@
 import type { AvatarWithListProps } from '../../types';
-import { AvatarImage } from "../../components/avatar";
-import { getAvatarById } from "../../utils";
-import { cosmicWords } from "../../data/words";
+import { AvatarImage } from '../../components/avatar';
+import { getAvatarById } from '../../utils';
+import { cosmicWords } from '../../data/words';
 
 export default function CounterforceCard({ avatar, mockAvatars }: AvatarWithListProps) {
 

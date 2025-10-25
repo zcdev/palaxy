@@ -1,5 +1,5 @@
 import type { AvatarBaseProps } from '../../types';
-import { AvatarImage } from "../../components/avatar";
+import { AvatarImage } from '../../components/avatar';
 
 export default function IdentityCard({ avatar }: AvatarBaseProps) {
 

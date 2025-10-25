@@ -1,5 +1,5 @@
 // components/Stars.tsx
-import StarLayer from "./StarLayer";
+import StarLayer from './StarLayer';
 
 export default function Stars() {
     return (

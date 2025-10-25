@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 type StarLayerProps = {
     count: number;
@@ -56,7 +56,7 @@ export default function StarLayer({
                     transition={{
                         duration: star.duration,
                         repeat: Infinity,
-                        ease: "easeInOut",
+                        ease: 'easeInOut',
                     }}
                 />
             ))}

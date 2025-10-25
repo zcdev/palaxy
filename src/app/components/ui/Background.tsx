@@ -1,6 +1,6 @@
 'use client';
 
-import Stars from "../../components/background/Stars";
+import Stars from '../../components/background/Stars';
 
 export default function Background() {
     return (

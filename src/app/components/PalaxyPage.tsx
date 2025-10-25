@@ -34,14 +34,16 @@ export default function PalaxyPage() {
 
     const handleConfirmAvatar = () => setState({ ...state, phase: 'forces' });
 
-    const handleDenyAvatar = () => setState({ ...state, phase: 'select' });
+    const handleReturnHome = () => setState({ ...state, phase: 'select' });
 
     const handleNextForces = () => setState({ ...state, phase: 'pulse' });
 
     const handleSurveySubmit = async (responses: Record<string, string>) => {
 
+        // Zod parse responses for checking against survey schema
         const parsed = surveySchema.safeParse(responses);
 
+        // Check validation errors
         if (!parsed.success) {
             const flattened = z.flattenError(parsed.error);
             setErrors(flattened.fieldErrors);
@@ -89,7 +91,7 @@ export default function PalaxyPage() {
                 <AvatarModal
                     avatar={state.selectedAvatar!}
                     onConfirm={handleConfirmAvatar}
-                    onDeny={handleDenyAvatar}
+                    onDeny={handleReturnHome}
                 />
             );
 
@@ -104,7 +106,7 @@ export default function PalaxyPage() {
             return <PulseSurvey onSubmit={handleSurveySubmit} errors={errors} />;
 
         case 'thanks':
-            return <Transmission responses={state.surveyResponses} />;
+            return <Transmission responses={state.surveyResponses} onReturn={handleReturnHome} />;
     }
 }
 

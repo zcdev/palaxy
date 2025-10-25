@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { createNoise3D } from "simplex-noise";
-import { ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { createNoise3D } from 'simplex-noise';
+import { ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -15,7 +15,7 @@ const WavePrismBackground = ({
     colors,
     waveWidth,
     blur = 7,
-    speed = "fast",
+    speed = 'fast',
     waveOpacity = 0.7,
     ...props
 }: {
@@ -25,7 +25,7 @@ const WavePrismBackground = ({
     colors?: string[];
     waveWidth?: number;
     blur?: number;
-    speed?: "slow" | "fast";
+    speed?: 'slow' | 'fast';
     waveOpacity?: number;
     [key: string]: any;
 }) => {
@@ -40,9 +40,9 @@ const WavePrismBackground = ({
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const getSpeed = () => {
         switch (speed) {
-            case "slow":
+            case 'slow':
                 return 0.001;
-            case "fast":
+            case 'fast':
                 return 0.002;
             default:
                 return 0.001;
@@ -51,7 +51,7 @@ const WavePrismBackground = ({
 
     const init = () => {
         canvas = canvasRef.current;
-        ctx = canvas.getContext("2d");
+        ctx = canvas.getContext('2d');
         w = ctx.canvas.width = window.innerWidth;
         h = ctx.canvas.height = window.innerHeight;
         ctx.filter = `blur(${blur}px)`;
@@ -65,11 +65,11 @@ const WavePrismBackground = ({
     };
 
     const waveColors = colors ?? [
-        "#38bdf8",
-        "#818cf8",
-        "#923ce8ff",
-        "#e879f9",
-        "#22d3ee",
+        '#38bdf8',
+        '#818cf8',
+        '#923ce8ff',
+        '#e879f9',
+        '#22d3ee',
     ];
 
     const drawWave = (n: number) => {
@@ -106,28 +106,28 @@ const WavePrismBackground = ({
     const [isSafari, setIsSafari] = useState(false);
     useEffect(() => {
         setIsSafari(
-            typeof window !== "undefined" &&
-            navigator.userAgent.includes("Safari") &&
-            !navigator.userAgent.includes("Chrome")
+            typeof window !== 'undefined' &&
+            navigator.userAgent.includes('Safari') &&
+            !navigator.userAgent.includes('Chrome')
         );
     }, []);
 
     return (
         <div
             className={cn(
-                "flex flex-col items-center justify-center",
+                'flex flex-col items-center justify-center',
                 containerClassName
             )}
         >
             <canvas
-                className="absolute inset-0 z-0"
+                className='absolute inset-0 z-0'
                 ref={canvasRef}
-                id="canvas"
+                id='canvas'
                 style={{
                     ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
                 }}
             ></canvas>
-            <div className={cn("relative z-10", className)} {...props}>
+            <div className={cn('relative z-10', className)} {...props}>
                 {children}
             </div>
         </div>

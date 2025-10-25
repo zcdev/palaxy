@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { Button } from "../components/ui";
 import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '../styles';
 import { questions } from '../data/survey';
-import ProgressBar from "../components/ui/ProgressBar";
-import type { FieldErrors } from "../types";
+import ProgressBar from '../components/ui/ProgressBar';
+import type { FieldErrors } from '../types';
 import type { SurveyResponse } from '../lib/schema';
 
 interface Props {
@@ -38,7 +38,7 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
     };
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []); // triggers once when PulseSurvey mounts
 
 

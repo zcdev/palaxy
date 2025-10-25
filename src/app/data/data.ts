@@ -1,6 +1,6 @@
 // Avatar Data:
 
-import { Avatar } from "../types";
+import { Avatar } from '../types';
 
 export const mockAvatars: Avatar[] = [
     {
