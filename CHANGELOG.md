@@ -1,3 +1,9 @@
+## [v1.0.1] – Post-Launch Hotfixes (2025-10-25)
+- Fixed Open Graph image path for social preview
+- Adjusted mobile modal scroll behavior
+- Minor typography and spacing refinements
+- Verified production rendering consistency
+
 # 🌌 Palaxy Milestone `v1.0.0`
 
 ## [v1.0.0] - 2025-10-25
