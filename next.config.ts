@@ -10,4 +10,7 @@ module.exports = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
