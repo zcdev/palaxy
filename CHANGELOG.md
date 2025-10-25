@@ -1,3 +1,18 @@
+# 🌌 Palaxy Milestone `v1.0.0`
+
+## [v1.0.0] - 2025-10-25
+### ✨ Official Launch Release (2025-10-25)
+
+- Completed full UI/UX polish across all components and pages
+- Verified 100/100 Lighthouse scores for Performance, Accessibility, Best Practices, and SEO
+- Finalized avatar logic, force map interactions, and survey flow
+- Integrated scroll-to-top, return navigation, and smooth transitions
+- Added complete SEO metadata, canonical URLs, and Open Graph previews
+- Deployed under custom domain https://palaxy.fun/
+- Refined responsive layout and accessibility (ARIA labels, alt text, semantic HTML)
+- Updated project documentation and portfolio-ready README
+- Conducted final QA and production verification
+
 ## [v0.9.3] - 2025-10-25
 ### ✨ SEO & Metadata Implementation (2025-10-25)
 
@@ -47,7 +62,7 @@
 - Maintains performance consistency across devices with GPU-accelerated motion  
 - Prepares the codebase for v0.9.2 UX polish milestone and v1.0.0 final release
 
-# 🌌 Palaxy Milestone `v0.9.0-merge-validation`
+# 🌌 Palaxy Milestone `v0.9.0`
 
 **Date:** 2025-10-23
 **Branch:** `feat/validation` → `main`
