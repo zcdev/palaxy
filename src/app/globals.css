@@ -14,6 +14,21 @@ html, body {
   color: var(--color-fg);
 }
 
+picture img {
+  display: inline-block;
+  width: auto !important;
+  height: auto !important;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+canvas {
+  mix-blend-mode: screen;
+}
+
 .font-headline {
   font-family: var(--font-headline);
 }
@@ -31,17 +46,6 @@ html, body {
   word-spacing: 1.5;
 }
 
-picture img {
-  display: inline-block;
-  width: auto !important;
-  height: auto !important;
-}
-
-img {
-  width: auto;
-  height: auto;
-}
-
 .avatar-img {
   max-width: 120px !important;
 }
@@ -49,10 +53,6 @@ img {
 .progress-bar {
   width: 100%;
   max-width: 560px;
-}
-
-canvas {
-  mix-blend-mode: screen;
 }
 
 @media (width >= 48rem) {

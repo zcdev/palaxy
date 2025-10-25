@@ -14,7 +14,7 @@ const WavePrismBackground = ({
     containerClassName,
     colors,
     waveWidth,
-    blur = 7,
+    blur = 5,
     speed = 'fast',
     waveOpacity = 0.7,
     ...props

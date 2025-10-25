@@ -9,7 +9,7 @@ export default function HomePage() {
             <header>
                 <Navbar />
             </header>
-            <main className="md:mt-20 text-center flex flex-col items-center h-full">
+            <main className="my-20 text-center flex flex-col items-center h-full">
                 <PalaxyPage />
             </main>
         </div>

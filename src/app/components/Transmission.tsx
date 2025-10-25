@@ -18,7 +18,7 @@ export function Transmission({ responses, onReturn }: Props) {
     }, []);
 
     return (
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-transparent text-white text-center w-full p-4 mx-6 my-10 md:mt-0">
+        <section className="relative flex flex-col px-6 items-center justify-center overflow-hidden bg-transparent text-white text-center w-full">
             <WavePrismBackground className="w-full bg-transparent mx-auto">
                 <h1 className="text-3xl md:text-4xl font-headline font-bold mb-4">Transmission Complete</h1>
                 <p className="font-body text-xl mb-5">
