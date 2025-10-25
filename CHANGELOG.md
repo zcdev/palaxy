@@ -1,3 +1,37 @@
+## [v0.9.3] - 2025-10-25
+### ✨ Minor Enhancements with UI Polish (2025-10-25)
+
+- refactored handleDenyAvatar → handleReturnHome to unify navigation flow
+- added Return Home button with shared select phase + onReturn props
+- implemented scroll-to-top on PulseSurvey and Transmission screens
+- fixed shared ResponsiveImage component for auto width/height to prevent layout shift
+- standardized all import quotes to single quotes across project
+- renamed asset group from palaxy group → palaxy pals for clarity
+- refined layout spacing, pixel alignment, and code comments
+- improved copywriting consistency and tone
+
+## [v0.9.2] - 2025-10-24 
+### ✨ Final UX Polish (2025-10-24)
+
+- Routing: Moved main page from /palaxy to root (/) for clean URLs.
+- UI Enhancements: Added Palaxy Pals’ Words for friendly flavor text.
+- Form Fix: Resolved auto-submit issue by defaulting Button to type="button".
+- Scroll Behavior: Implemented scroll-to-top on page load for smoother transitions.
+- Accessibility & Styling: Verified ARIA labels, color contrast, and responsive padding.
+- Backgrounds: Ensured fixed-position star layers render consistently across routes.
+
+## [v0.9.1] - 2025-10-24  
+### ✨ Transmission Animation Enhancement (Wave Prism)
+
+- Added Wave Prism–inspired animated background to the Transmission page using Motion One and simplex-noise    
+- Refined layout spacing, alignment, and visual rhythm for a more balanced composition  
+- Replaced `<div>` wrappers with semantic `<section>` tags for clarity and accessibility  
+- Styled canvas and adjusted z-index layering to integrate cleanly with the shared cosmic starfield  
+- Pixel-level UI adjustments and visual polish pass
+- New dependencies: `motion`, `simplex-noise`, `clsx`, and `tailwind-merge`  
+- Maintains performance consistency across devices with GPU-accelerated motion  
+- Prepares the codebase for v0.9.2 UX polish milestone and v1.0.0 final release
+
 # 🌌 Palaxy Milestone `v0.9.0-merge-validation`
 
 **Date:** 2025-10-23
@@ -35,34 +69,4 @@
 ### 🪞Notes
 
 This marks Palaxy’s final **frontend foundation milestone** before backend integration expands toward matchmaking logic and Supabase schema design.
-
-## [v0.9.1] - 2025-10-24  
-### ✨ Transmission Animation Enhancement (Wave Prism)
-
-**Highlights**
-- Added Wave Prism–inspired animated background to the Transmission page using Motion One and simplex-noise    
-- Refined layout spacing, alignment, and visual rhythm for a more balanced composition  
-- Replaced `<div>` wrappers with semantic `<section>` tags for clarity and accessibility  
-- Styled canvas and adjusted z-index layering to integrate cleanly with the shared cosmic starfield  
-- Pixel-level UI adjustments and visual polish pass  
-
-**Technical Notes**
-- New dependencies: `motion`, `simplex-noise`, `clsx`, and `tailwind-merge`  
-- Maintains performance consistency across devices with GPU-accelerated motion  
-- Prepares the codebase for v0.9.2 UX polish milestone and v1.0.0 final release
-
-## [v0.9.2] - 2025-10-24 
-### ✨ Final UX Polish (2025-10-24)
-
-Routing: Moved main page from /palaxy to root (/) for clean URLs.
-
-UI Enhancements: Added Palaxy Pals’ Words for friendly flavor text.
-
-Form Fix: Resolved auto-submit issue by defaulting Button to type="button".
-
-Scroll Behavior: Implemented scroll-to-top on page load for smoother transitions.
-
-Accessibility & Styling: Verified ARIA labels, color contrast, and responsive padding.
-
-Backgrounds: Ensured fixed-position star layers render consistently across routes.
 
