@@ -19,7 +19,7 @@ export function AvatarModal({ avatar, onConfirm, onDeny }: Props) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-40 bg-black/60 flex items-center justify-center px-6 overscroll-contain"
+                className="fixed inset-0 z-50 bg-black flex items-center justify-center px-6 overscroll-contain"
             >
                 <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
