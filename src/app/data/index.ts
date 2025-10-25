@@ -1,3 +1,3 @@
-export * from "./data";
-export * from "./survey";
-export * from "./words";
+export * from './data';
+export * from './survey';
+export * from './words';

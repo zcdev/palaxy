@@ -1,6 +1,6 @@
 import type { AvatarWithListProps } from '../../types';
-import { AvatarImage } from "../../components/avatar";
-import { getAvatarById } from "../../utils";
+import { AvatarImage } from '../../components/avatar';
+import { getAvatarById } from '../../utils';
 
 export default function NeighborCard({ avatar, mockAvatars }: AvatarWithListProps) {
 

@@ -24,9 +24,9 @@ const glowOverlay: Variants = {
 export default function AvatarImage({
     src,
     alt,
-    width = 120,
-    height = 120,
-    className = "",
+    width = 500,
+    height = 500,
+    className = '',
 }: Props) {
     return (
         <motion.div
@@ -42,8 +42,9 @@ export default function AvatarImage({
                     alt={alt}
                     width={width}
                     height={height}
-                    priority
+                    style={{ width: 'auto', height: 'auto' }}
                     className={className}
+                    loading="lazy"
                 />
                 <motion.div
                     className="absolute inset-0 rounded-full bg-white/30 blur-lg pointer-events-none"
