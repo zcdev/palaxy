@@ -53,20 +53,20 @@ const WavePrismBackground = ({
         canvas = canvasRef.current;
         ctx = canvas.getContext('2d');
         w = ctx.canvas.width = window.innerWidth;
-        h = ctx.canvas.height = window.innerHeight;
+        h = ctx.canvas.height = 800;
         ctx.filter = `blur(${blur}px)`;
         nt = 0;
         window.onresize = function () {
             w = ctx.canvas.width = window.innerWidth;
-            h = ctx.canvas.height = window.innerHeight;
+            h = ctx.canvas.height = 800;
             ctx.filter = `blur(${blur}px)`;
         };
         render();
     };
 
     const waveColors = colors ?? [
-        '#38bdf8',
         '#818cf8',
+        '#2bbbf9ff',
         '#923ce8ff',
         '#e879f9',
         '#22d3ee',
@@ -76,7 +76,7 @@ const WavePrismBackground = ({
         nt += getSpeed();
         for (i = 0; i < n; i++) {
             ctx.beginPath();
-            ctx.lineWidth = waveWidth || 10 * i;
+            ctx.lineWidth = waveWidth || 12;
             ctx.strokeStyle = waveColors[i % waveColors.length];
             for (x = 0; x < w; x += 5) {
                 var y = noise(x / 800, 0.3 * i, nt) * 100;
