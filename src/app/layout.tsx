@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Black_Han_Sans, Spinnaker } from 'next/font/google';
 import Background from './components/ui/Background';
+import { Analytics } from '@vercel/analytics/next';
 
 const blackHanSans = Black_Han_Sans({
   subsets: ['latin'],
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
       <body>
         <Background />
         {children}
+        <Analytics />
       </body>
     </html>
   );
