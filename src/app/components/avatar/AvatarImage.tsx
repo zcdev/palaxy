@@ -24,8 +24,8 @@ const glowOverlay: Variants = {
 export default function AvatarImage({
     src,
     alt,
-    width = 500,
-    height = 500,
+    width = 350,
+    height = 350,
     className = '',
 }: Props) {
     return (
