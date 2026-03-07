@@ -71,8 +71,8 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
   return (
     <html lang="en" className={`${blackHanSans.variable} ${spinnaker.variable}`}>
       <body>
-        {children}
         <Background />
+        {children}
         <Analytics />
       </body>
     </html>
