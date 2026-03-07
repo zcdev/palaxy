@@ -3,7 +3,7 @@ import StarLayer from './StarLayer';
 
 export default function Stars() {
     return (
-        <div className="fixed h-full">
+        <div className="fixed h-full inset-0">
             {/* Far layer: faint, slow warp */}
             <StarLayer
                 count={100}
