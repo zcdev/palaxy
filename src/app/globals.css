@@ -57,6 +57,12 @@ canvas {
   max-width: 560px;
 }
 
+.background-sky {
+  background: linear-gradient(to bottom, #1e1a4d, #59168b, #000000);
+  background-attachment: fixed;
+  height: 100%;
+}
+
 @media (width >= 48rem) {
   .font-body {
     line-height: 1.625;
