@@ -12,6 +12,8 @@ html {
 }
 
 html, body {
+  position: fixed;
+  overflow: scroll;
   height: 100%;
   color: var(--color-fg);
 }
