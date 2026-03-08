@@ -16,10 +16,6 @@ html, body {
   color: var(--color-fg);
 }
 
-body {
-  min-height: 100dvh;
-}
-
 picture img {
   display: inline-block;
   width: auto !important;
