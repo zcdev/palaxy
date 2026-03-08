@@ -11,8 +11,13 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html, body, .background-sky {
   height: 100%;
+}
+
+body {
+  background-color: black;
+  background-repeat: no-repeat;
   color: var(--color-fg);
 }
 
