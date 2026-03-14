@@ -39,11 +39,11 @@ export default function StarLayer({
     }, [count, sizeRange, durationRange]);
 
     return (
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="inset-0 overflow-hidden">
             {stars.map((star, i) => (
                 <motion.div
                     key={i}
-                    className="absolute rounded-full bg-white"
+                    className="fixed rounded-full bg-white"
                     style={{
                         width: star.size,
                         height: star.size,

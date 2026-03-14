@@ -120,14 +120,14 @@ const WavePrismBackground = ({
             )}
         >
             <canvas
-                className='absolute inset-0 z-0'
+                className='absolute inset-0 z-4'
                 ref={canvasRef}
                 id='canvas'
                 style={{
                     ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
                 }}
             ></canvas>
-            <div className={cn('relative z-10', className)} {...props}>
+            <div className={cn('relative z-3', className)} {...props}>
                 {children}
             </div>
         </div>
