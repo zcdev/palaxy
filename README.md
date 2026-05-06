@@ -9,7 +9,7 @@
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel\&logoColor=white)](https://vercel.com/)
 
 ## Live Demo
-Explore your cosmic identity: [palaxy.app](https://palaxy.app)
+Explore your cosmic identity: [https://palaxy.app](https://palaxy.app)
 
 ## Overview
 
