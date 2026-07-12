@@ -44,7 +44,7 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
 
     return (
         <section className="relative z-4 mx-6 md:mt-0">
-            <h1 className="text-3xl md:text-4xl font-headline font-bold md:mt-0 mb-6">Quick Palaxy Pulse</h1>
+            <h1 className="text-3xl md:text-4xl font-headline tracking-wider md:mt-0 mb-6">Quick Palaxy Pulse</h1>
             <ProgressBar progress={progress} />
             <form
                 onSubmit={(event) => { handleSubmit(event); }}

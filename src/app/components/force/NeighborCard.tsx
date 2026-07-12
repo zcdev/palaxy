@@ -14,7 +14,7 @@ export default function NeighborCard({ avatar, mockAvatars }: AvatarWithListProp
                 <div className="avatar-img mx-auto"><AvatarImage src={neighborLeftData!.image} alt={neighborLeftData!.name} />
                 </div>
                 <div className="col-span-2 pl-0 xl:pl-6 pt-4 xl:pt-0">
-                    <h2 className="font-headline text-xl font-bold text-center xl:text-left leading-relaxed tracking-wide">{neighborLeftData!.name}</h2>
+                    <h2 className="font-headline text-xl tracking-wider text-center xl:text-left leading-relaxed">{neighborLeftData!.name}</h2>
                     <p className="font-body text-md text-center lg:text-left pt-2">{avatar.forces.neighbors[0].note}</p>
                 </div>
             </div>
@@ -22,7 +22,7 @@ export default function NeighborCard({ avatar, mockAvatars }: AvatarWithListProp
                 <div className="avatar-img mx-auto"><AvatarImage src={neighborRightData!.image} alt={neighborRightData!.name} />
                 </div>
                 <div className="col-span-2 pl-0 xl:pl-6 pt-4 xl:pt-0">
-                    <h2 className="font-headline text-xl font-bold text-center xl:text-left leading-relaxed tracking-wide">{neighborRightData!.name}</h2>
+                    <h2 className="font-headline text-xl tracking-wide text-center xl:text-left leading-relaxed tracking-wide">{neighborRightData!.name}</h2>
                     <p className="font-body text-md text-center lg:text-left pt-2">{avatar.forces.neighbors[1].note}</p>
                 </div>
             </div>

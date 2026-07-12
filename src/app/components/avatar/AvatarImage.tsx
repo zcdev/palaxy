@@ -44,7 +44,7 @@ export default function AvatarImage({
                     height={height}
                     style={{ width: 'auto', height: 'auto' }}
                     className={className}
-                    loading="lazy"
+                    loading="eager"
                 />
                 <motion.div
                     className="absolute inset-0 rounded-full bg-white/30 blur-lg pointer-events-none"

@@ -3,7 +3,7 @@
 @import "tailwindcss/preflight.css" layer(base);
 
 :root {
-  --color-fg: #f5f5f5;
+  --color-fg: #fff;
   --color-accent: #8b5cf6;
 }
 
@@ -36,6 +36,10 @@ canvas {
   font-family: var(--font-headline);
 }
 
+.font-subhead {
+  font-family: var(--font-subhead);
+}
+
 .font-nav {
   font-family: Helvetica, sans-serif;
   text-transform: uppercase;
@@ -47,6 +51,10 @@ canvas {
   line-height: 1.5;
   letter-spacing: 0.25;
   word-spacing: 1.5;
+}
+
+.card {
+  background: black linear-gradient(to bottom,#dab2ff,#c27aff,#ad46ff, #9810fa,#8200db, #9810fa,#ad46ff,#c27aff, #dab2ff, #dab2ff);
 }
 
 .avatar-img {

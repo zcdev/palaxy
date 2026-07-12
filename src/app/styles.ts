@@ -4,7 +4,7 @@
 
 // Standard Solid Purple Button
 
-export const purpleButton = 'mt-2 mb-5 px-6 py-3 bg-purple-600 text-white font-normal rounded-full shadow-lg hover:bg-purple-500 transition';
+export const purpleButton = 'mt-2 my-2 mb-5 px-6 py-3 bg-purple-300 text-black font-normal rounded-full border-2 border-purple-500 shadow-lg hover:bg-purple-400 transition';
 
 // Survey Bordered Ghost Radio Buttons
 
@@ -18,4 +18,4 @@ export const emeraldButton = 'inline-block w-full sm:w-auto text-center px-4 py-
 
 export const cyanButton = 'inline-block w-full sm:w-auto text-center px-4 py-2 rounded-full border border-cyan-300 text-cyan-300 bg-transparent hover:bg-white/10 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-200';
 
-export const blueButton = 'inline-block w-full sm:w-auto text-center px-4 py-2 rounded-full border border-blue-400 text-blue-400 bg-transparent hover:bg-white/10 hover:text-blue-500 hover:border-blue-500 transition-all duration-200';
+export const blueButton = 'inline-block w-full sm:w-auto text-center px-4 py-2 rounded-full border border-blue-300 text-blue-300 bg-transparent hover:bg-white/10 hover:text-blue-500 hover:border-blue-500 transition-all duration-200';

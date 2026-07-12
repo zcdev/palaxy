@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Black_Han_Sans, Spinnaker } from 'next/font/google';
+import { Black_Han_Sans, Spinnaker, Open_Sans } from 'next/font/google';
 import Background from './components/ui/Background';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -8,6 +8,13 @@ const blackHanSans = Black_Han_Sans({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-headline',
+  display: 'swap',
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: '600',
+  variable: '--font-subhead',
   display: 'swap',
 });
 
@@ -69,7 +76,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
 
   return (
-    <html lang="en" className={`${blackHanSans.variable} ${spinnaker.variable}`}>
+    <html lang="en" className={`${blackHanSans.variable} ${spinnaker.variable} ${openSans.variable}`}>
       <body className="bg-gradient-to-b from-indigo-950 via-purple-900 to-black">
         {children}
         <Background />
