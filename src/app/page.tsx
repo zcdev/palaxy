@@ -9,7 +9,7 @@ export default function HomePage() {
             <header>
                 <Navbar />
             </header>
-            <main className="py-20 text-center flex flex-col items-center">
+            <main className="text-center flex flex-col items-center">
                 <PalaxyPage />
             </main>
         </div>

@@ -19,7 +19,7 @@ export function AvatarModal({ avatar, onConfirm, onDeny }: Props) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 bg-black flex items-center justify-center px-6 overscroll-contain"
+                className="inset-0 z-4 justify-center px-6 overscroll-contain"
             >
                 <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
@@ -27,7 +27,7 @@ export function AvatarModal({ avatar, onConfirm, onDeny }: Props) {
                     exit={{ scale: 0.9, opacity: 0 }}
                     role="dialog"
                     aria-modal="true"
-                    className="relative max-h-[calc(100dvh-2rem)] bg-white/80 p-6 my-auto rounded-2xl max-w-lg text-center text-black shadow-lg overflow-y-scroll"
+                    className="relative h-auto bg-white/80 p-6 rounded-2xl max-w-lg text-center text-black shadow-lg overflow-y-scroll"
                 >
                     <h2 className="font-headline text-2xl font-bold mb-3">{avatar.name}</h2>
                     <p className="font-body text-md mb-6 leading-loose text-left">{avatar.intro}</p>

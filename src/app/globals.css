@@ -54,7 +54,8 @@ canvas {
 }
 
 .card {
-  background: black linear-gradient(to bottom,#dab2ff,#c27aff,#ad46ff, #9810fa,#8200db, #9810fa,#ad46ff,#c27aff, #dab2ff, #dab2ff);
+  background-color: black;
+  background-image: linear-gradient(to bottom,#dab2ff,#c27aff,#ad46ff, #9810fa,#8200db, #9810fa,#ad46ff,#c27aff, #dab2ff, #dab2ff);
 }
 
 .avatar-img {

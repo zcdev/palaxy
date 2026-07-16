@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
 
   return (
     <html lang="en" className={`${blackHanSans.variable} ${spinnaker.variable} ${openSans.variable}`}>
-      <body className="bg-gradient-to-b from-indigo-950 via-purple-900 to-black">
+      <body className="bg-gradient-to-b from-indigo-950 via-purple-900 to-black py-20">
         {children}
         <Background />
         <Analytics />
