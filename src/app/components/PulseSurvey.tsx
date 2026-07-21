@@ -1,30 +1,31 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from "../components/ui";
-import { purpleButton, redButton, amberButton, limeButton, emeraldButton, cyanButton, blueButton } from '../styles';
+import { purpleButton, red, amber, lime, emerald, cyan } from '../styles';
 import { questions } from '../data/survey';
 import ProgressBar from '../components/ui/ProgressBar';
 import type { FieldErrors } from '../types';
 import type { SurveyResponse } from '../lib/schema';
+import { surveySchema } from '../lib/schema';
+import { z } from 'zod';
 
 interface Props {
     onSubmit: (responses: Record<string, string>) => void;
-    errors: FieldErrors<SurveyResponse>;
 }
 
-const buttons = [
-    redButton,
-    amberButton,
-    limeButton,
-    emeraldButton,
-    cyanButton,
-    blueButton
+const colors = [
+    red,
+    amber,
+    lime,
+    emerald,
+    cyan
 ];
 
-export function PulseSurvey({ onSubmit, errors }: Props) {
-
+export function PulseSurvey({ onSubmit }: Props) {
     const [responses, setResponses] = useState<Record<string, string>>({});
+    const [errors, setErrors] = useState<FieldErrors<SurveyResponse>>({});
+    const errorRef = useRef<Record<number, HTMLParagraphElement | null>>({});
 
     // Calculate survey progress by checking the lastest response
     const keys = Object.keys(responses);
@@ -34,6 +35,16 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        // Zod parse responses for checking against survey schema
+        const parsed = surveySchema.safeParse(responses);
+
+        // Check validation errors
+        if (!parsed.success) {
+            const flattened = z.flattenError(parsed.error);
+            setErrors(flattened.fieldErrors);
+            return;
+        }
+
         onSubmit(responses);
     };
 
@@ -41,42 +52,53 @@ export function PulseSurvey({ onSubmit, errors }: Props) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []); // triggers once when PulseSurvey mounts
 
+    useEffect(() => {
+
+        const firstErrorKey = Object.keys(errors)[0];
+
+        if (!firstErrorKey) return;
+
+        // Reset focus on the first invalid question
+        errorRef.current[Number(firstErrorKey)]?.focus();
+
+    }, [errors]);
+
 
     return (
         <section className="relative z-4 mx-6 md:mt-0">
             <h1 className="text-3xl md:text-4xl font-headline tracking-wider md:mt-0 mb-6">Quick Palaxy Pulse</h1>
             <ProgressBar progress={progress} />
             <form
-                onSubmit={(event) => { handleSubmit(event); }}
-                className="z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm">
-                <ol role="list" className="list-decimal list-inside pl-3">
-                    {questions.map(question => (
-                        <li key={question.id} className="pt-3 sm:text-sm md:text-lg text-left">
-                            {question.text}
-                            {errors[question.id] && (
-                                <p className="text-red-500 text-sm mt-1">{errors[question.id]}
+                onSubmit={handleSubmit}
+                className="progress-bar z-10 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-md backdrop-blur-sm">
+                {questions.map(question => {
+                    return (
+                        <fieldset key={question.id}
+                            className={`text-md text-left sm:text-left pt-2 pb-6 mb-6 ${colors[question.id - 1]}`}>
+                            <legend>{question.text}</legend>
+                            {errors[question.id as keyof typeof errors] && (
+                                <p id={`error-${question.id}`} ref={el => {
+                                    errorRef.current[question.id] = el;
+                                }}
+                                    tabIndex={-1}
+                                    aria-invalid={!!errors[question.id]}
+                                    aria-describedby={`error-${question.id}`} className="text-red-500 text-sm mt-1" role="alert">{errors[question.id as keyof typeof errors]}
                                 </p>
                             )}
-                            <div role="radiogroup"
-                                aria-labelledby="survey options"
-                                className="flex flex-col sm:flex-row gap-3 items-center sm:items-start justify-center sm:justify-start text-sm text-center sm:text-left pt-2 pb-6">
-                                {question.options.map((option, index) => {
-                                    const palette = buttons.slice(0, question.options.length);
-                                    const buttonColor = palette[index];
-                                    return (
-                                        <Button
-                                            key={option}
-                                            data={responses[question.id] === option ? 'on' : 'off'}
-                                            onClick={() => handleChange(question.id, option)}
-                                            className={buttonColor}
-                                            text={option}
+                            {question.options.map(option => {
+                                const inputId = `question-${question.id}-${option}`;
+                                return (
+                                    <label key={option} htmlFor={inputId} className="block ml-2">
+                                        <input type="radio" id={inputId} name={inputId} value={option} onChange={() => handleChange(question.id, option)}
+                                            className="mr-2"
                                         />
-                                    );
-                                })}
-                            </div>
-                        </li>
-                    ))}
-                </ol>
+                                        {option}
+                                    </label>
+                                );
+                            })}
+                        </fieldset>
+                    );
+                })}
                 <Button
                     type="submit"
                     className={purpleButton}

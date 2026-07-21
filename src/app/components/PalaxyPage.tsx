@@ -6,17 +6,9 @@ import { AvatarModal } from './avatar/AvatarModal';
 import { ForceMap } from './ForceMap';
 import { PulseSurvey } from './PulseSurvey';
 import { Transmission } from './Transmission';
-import type { PalaxyState, Avatar, FieldErrors } from '../types';
+import type { PalaxyState, Avatar } from '../types';
 import { mockAvatars } from '../data';
 import { supabase } from '../lib/client';
-import { surveySchema } from '../lib/schema';
-import type { SurveyResponse } from '../lib/schema';
-import { z } from 'zod';
-
-interface Props {
-    avatar?: Avatar;
-    selectedAvatar?: Avatar;
-}
 
 export default function PalaxyPage() {
 
@@ -26,8 +18,6 @@ export default function PalaxyPage() {
         surveyResponses: {},
         selectedAvatar: undefined,
     });
-
-    const [errors, setErrors] = useState<FieldErrors<SurveyResponse>>({});
 
     const handleSelectAvatar = (avatar: Avatar) =>
         setState({ ...state, selectedAvatar: avatar, phase: 'intro' });
@@ -39,20 +29,6 @@ export default function PalaxyPage() {
     const handleNextForces = () => setState({ ...state, phase: 'pulse' });
 
     const handleSurveySubmit = async (responses: Record<string, string>) => {
-
-        // Zod parse responses for checking against survey schema
-        const parsed = surveySchema.safeParse(responses);
-
-        // Check validation errors
-        if (!parsed.success) {
-            const flattened = z.flattenError(parsed.error);
-            setErrors(flattened.fieldErrors);
-            return;
-        }
-
-        setErrors({});
-
-        // Update local state immediately so UI feels responsive
         setState((prev) => ({
             ...prev,
             surveyResponses: responses,
@@ -103,7 +79,7 @@ export default function PalaxyPage() {
             );
 
         case 'pulse':
-            return <PulseSurvey onSubmit={handleSurveySubmit} errors={errors} />;
+            return <PulseSurvey onSubmit={handleSurveySubmit} />;
 
         case 'thanks':
             return <Transmission responses={state.surveyResponses} onReturn={handleReturnHome} />;
