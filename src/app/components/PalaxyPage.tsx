@@ -8,7 +8,7 @@ import { PulseSurvey } from './PulseSurvey';
 import { Transmission } from './Transmission';
 import type { PalaxyState, Avatar } from '../types';
 import { mockAvatars } from '../data';
-import { supabase } from '../lib/client';
+// import { supabase } from '../lib/client';
 
 export default function PalaxyPage() {
 
@@ -36,17 +36,23 @@ export default function PalaxyPage() {
         }));
 
         try {
-            // Insert survey data into Supabase
-            const { error } = await supabase.from('responses').insert({
-                session_id: crypto.randomUUID(), // optional unique visitor ID
-                answers: responses,
-                avatar_result: state.selectedAvatar ?? null,
+            // Insert survey data into Neon
+            const response = await fetch("/api/responses", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    sessionId: crypto.randomUUID(),
+                    answers: responses,
+                    avatarResult: state.selectedAvatar,
+                }),
             });
 
-            if (error) {
+            if (!response.ok) {
                 // Silent fail-safe: report to console only in dev
                 if (process.env.NODE_ENV === 'development') {
-                    console.error('Supabase insert error:', error);
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
             } else if (process.env.NODE_ENV === 'development') {
                 console.log('Survey saved successfully ✅');
